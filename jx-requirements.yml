@@ -1,17 +1,22 @@
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  project: ""
+  clusterName: bimtonic
+  environmentGitOwner: crazy-john
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: lunar-listener-245012
   provider: gke
-  zone: ""
-gitops: true
+  zone: europe-west1-b
 environments:
 - key: dev
 - key: staging
 - key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 35.195.8.155.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
@@ -21,13 +26,13 @@ secretStorage: vault
 storage:
   logs:
     enabled: true
-    url: ""
+    url: gs://bimtonic-logs-91f1a600-0e05-4965-a1f0-868e5835b525
   reports:
     enabled: true
-    url: ""
+    url: gs://bimtonic-reports-f93f6fb1-02ca-4747-9338-6e2d12807cf1
   repository:
     enabled: true
-    url: ""
+    url: gs://bimtonic-repository-14a618fa-2971-4ee1-8130-7fbbf856518
 versionStream:
   ref: master
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
